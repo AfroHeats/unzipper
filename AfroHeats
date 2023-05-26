@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="AfroHeats.css"/>
+  <title>Afro Heats</title>
+  <div class="banner">
+		<div class="navbar">
+			<img src="LOGO.PNG" class"logo">
+
+		</div>
+		<script>
+			var navbar = document.getElementById("navbar")
+			var banner = document.getElementById("banner")
+			navbar.onclick = function(){
+			if( navbar.style.right == "-250px"){
+				navbar.style.right == "0";}
+			else{
+				navbar.style.right == "-250px"; 
+			}
+		</script>
+</head>
+
+<body>
+    <div class="product Metallica">
+      <img src="Metallica.jfif" width="226" height="340" alt="Metallica">
+      <h3>Metallica</h3>
+      <p>Black vintage shirt year 1983</p>
+      <p>Price: 1200 PESOS</p>
+      <button class="btn" onclick="addToCart('Metallica', 600)">Add to Cart</button>
+    </div>
+    <div class="product Carhartt">
+      <img src="Carhartt.jfif" width="226" height="340" alt="Carhartt">
+      <h3>Carhartt</h3>
+      <p>Beige carhartt carpenter pants</p>
+      <p>Price: 2500 PESOS</p>
+      <button class="btn4" onclick="addToCart('Carhartt', 2500)">Add to Cart</button>
+    </div>
+    <div class="product Bape">
+      <img src="Bape.jfif" width="226" height="340" alt="Bape">
+      <h3>Bape</h3>
+      <p>Crazy chark full zip double hoodie</p>
+      <p>Price: 5000 PESOS</p>
+      <button class="btn" onclick="addToCart('Bape', 5000)">Add to Cart</button>
+    </div>
+    <div id="cart"></div>
+    <button class="btn1" onclick="displayCart()">BASKET CART NI TROPA</button>
+  <button class="btn3" onclick="checkout()">CHECKOUT NA TROPA</button>
+  <script>
+    var cartItems = [];
+    var totalPrice = 0;
+
+    function addToCart(product, price) {
+      cartItems.push(product);
+      totalPrice += price;
+      alert(product + " is added to cart ni Tropa!");
+    }
+
+    function displayCart() {
+      var cartElement = document.getElementById("cart");
+      cartElement.innerHTML = "";
+      for (var i = 0; i < cartItems.length; i++) {
+        var item = cartItems[i];
+        var itemElement = document.createElement("p");
+        itemElement.textContent = item;
+        cartElement.appendChild(itemElement);
+      }
+    }
+
+    function checkout() {
+      alert("Thanks for Purchasing, Tropa paba!? Total Price: " + "₱" + totalPrice );
+    }
+
+
+    function displayCart() {
+      alert("Products in cart ni Tropa: " + cartItems.join(", "));
+    }
+
+  </script>
+ 
+  
+
+  <footer>
+    <p> <b> <font face = "tahoma">  <center> 
+    
+        <hr>
+        <table>
+  
+          <th>
+            <li>ABOUT</li>
+            <li>Reduce, Reuse, Recycle.</li>
+            <li>Thrift Shop.</li>
+          </th>
+  
+          <th>
+            <li>SERVICES</li>
+            <li>Email: Afro.Heats@gmail.com</li>
+            <li>63+ 9686583532</li>
+          </th>
+  
+        </table>
+  
+      
+  
+      
+  
+      <h2>
+        <font face="Tahoma"> Follow Us na Tropa!!!</font>
+      </h2>
+ 
+        <a href="https://www.facebook.com/afro.heats" target="blank">
+          <img src="LOGO.png" width=" 50" height="50"></a>
+  
+  
+  
+        <a href="https://www.instagram.com/afro.heats/" target="_blank">
+          <img src="IG.png" width="50" height="50"></a>
+  
+        <p class="copyright">Afro Heats &#169; 2017</p></center> </font></b></p>
+  </footer>
+  </body>
+  </html>
